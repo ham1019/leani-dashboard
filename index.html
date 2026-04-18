@@ -40,7 +40,6 @@
   }
   @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
 
-  /* Post-it note */
   .postit {
     background: #fffde7;
     padding: 18px 20px;
@@ -117,7 +116,6 @@
     background: #C0392B;
   }
 
-  /* Weekly */
   .week-section {
     margin-top: 28px;
     max-width: 1000px;
@@ -162,7 +160,6 @@
     font-weight: 600;
   }
 
-  /* Tomorrow */
   .tomorrow-section {
     margin-top: 24px;
     max-width: 1000px;
@@ -192,7 +189,7 @@
 
 <div class="header">
   <h1>🐾 리니의 대시보드</h1>
-  <span class="date">2026-04-18 (토)</span>
+  <span class="date">2026-04-19 (일)</span>
   <div class="status">
     <div class="status-dot"></div>
     온라인
@@ -205,13 +202,13 @@
     <div class="postit">
       <div class="postit-title">🫧 리니</div>
       <div class="task-group-label">완료</div>
-      <div class="task-line done"><span class="icon">✅</span><span class="label">할 일 10개 정리 & 타임테이블</span><span class="time">4:30</span></div>
-      <div class="task-line done"><span class="icon">✅</span><span class="label">타임테이블 수정</span><span class="time">4:45</span></div>
-      <div class="task-line done"><span class="icon">✅</span><span class="label">일일 메모 작성</span><span class="time">10:44</span></div>
-      <div class="task-line done"><span class="icon">✅</span><span class="label">대시보드 만들기 & 배포</span><span class="time">11:18</span></div>
-      <div class="task-line done"><span class="icon">✅</span><span class="label">대시보드 v4 포스트잇!</span><span class="time">now</span></div>
-      <div class="task-group-label">대기</div>
-      <div class="task-line"><span class="icon">🔄</span><span class="label">실시간 업데이트 대기</span></div>
+      <div class="task-line done"><span class="icon">✅</span><span class="label">LinkedIn 포스트 후보 3개 전송</span><span class="time">6:00</span></div>
+      <div class="task-line done"><span class="icon">✅</span><span class="label">LinkedIn 리마인드 3회</span><span class="time">1~7시</span></div>
+      <div class="task-line done"><span class="icon">✅</span><span class="label">Nightly routine (다이어리/영상프롬프트/ham점검)</span><span class="time">21:10</span></div>
+      <div class="task-line done"><span class="icon">✅</span><span class="label">대시보드 업데이트</span><span class="time">00:03</span></div>
+      <div class="task-group-label">이슈</div>
+      <div class="task-line"><span class="icon">⚠️</span><span class="label">morning-briefing 크론 2일 연속 에러</span></div>
+      <div class="task-line"><span class="icon">📝</span><span class="label">LinkedIn 포스트 7일째 공백 (4/12~)</span></div>
     </div>
   </div>
 
@@ -219,16 +216,12 @@
   <div>
     <div class="postit pink">
       <div class="postit-title">👩‍💻 주인님</div>
-      <div class="task-group-label">완료</div>
-      <div class="task-line done"><span class="icon">✅</span><span class="label">사업자등록증+통장사본 발송</span><span class="time">4:40</span></div>
-      <div class="task-group-label">진행 중 🔥</div>
-      <div class="task-line"><span class="icon">🔄</span><span class="label">효림 스크립트 3시간용 재작성</span></div>
-      <div class="progress-bar"><div class="fill" style="width:50%"></div></div>
+      <div class="task-group-label">오늘 일정</div>
+      <div class="task-line"><span class="icon">📅</span><span class="label">지호 탁구채</span><span class="time">20:00</span></div>
+      <div class="task-line"><span class="icon">📅</span><span class="label">찬 메타 강의</span><span class="time">21:00</span></div>
       <div class="task-group-label">대기</div>
-      <div class="task-line"><span class="icon">⬜</span><span class="label">효림 실습 보완</span><span class="time">~1h</span></div>
-      <div class="task-line"><span class="icon">⬜</span><span class="label">효림 PPT 재작성</span><span class="time">~1h</span></div>
-      <div class="task-line"><span class="icon">⬜</span><span class="label">경기TP 사업계획서</span><span class="time">~2h</span></div>
-      <div class="task-line"><span class="icon">🌙</span><span class="label">NH 자동화</span><span class="time">~3h</span></div>
+      <div class="task-line"><span class="icon">⬜</span><span class="label">효림 세금계산서 발행 (사업자등록증 수령 후, 23일)</span></div>
+      <div class="task-line"><span class="icon">⬜</span><span class="label">ham 볼트 정리 (루트 파일 정리 필요)</span></div>
     </div>
   </div>
 </div>
@@ -236,41 +229,9 @@
 <!-- 주간 일정 -->
 <div class="week-section">
   <div class="postit">
-    <div class="postit-title">📅 이번 주 (4/14 ~ 4/20)</div>
+    <div class="postit-title">📅 이번 주 (4/19 ~ 4/25)</div>
     <div class="week-grid">
-      <div class="day-col">
-        <div class="day-name">월</div>
-        <div class="day-num">14</div>
-        <div class="event"><span class="ev-time">9:30</span> SK DIFY</div>
-        <div class="event"><span class="ev-time">10:00</span> 정신과</div>
-        <div class="event"><span class="ev-time">19:00</span> 학년티</div>
-        <div class="event"><span class="ev-time">21:00</span> 오픈클로</div>
-      </div>
-      <div class="day-col">
-        <div class="day-name">화</div>
-        <div class="day-num">15</div>
-        <div class="event"><span class="ev-time">9:30</span> SK DIFY</div>
-      </div>
-      <div class="day-col">
-        <div class="day-name">수</div>
-        <div class="day-num">16</div>
-        <div class="event"><span class="ev-time">16:40</span> 지호·햄 정신과</div>
-        <div class="event"><span class="ev-time">17:30</span> 찬 회식</div>
-      </div>
-      <div class="day-col">
-        <div class="day-name">목</div>
-        <div class="day-num">17</div>
-        <div class="event"><span class="ev-time">14:00</span> 경기도민 강의</div>
-        <div class="event"><span class="ev-time">16:00</span> 강기찬 미팅</div>
-        <div class="event"><span class="ev-time">18:30</span> 수호 축구</div>
-      </div>
       <div class="day-col today">
-        <div class="day-name">토</div>
-        <div class="day-num">18</div>
-        <div class="event"><span class="ev-time">10:00</span> 미용실</div>
-        <div class="event">🔥 스크립트 작업중</div>
-      </div>
-      <div class="day-col">
         <div class="day-name">일</div>
         <div class="day-num">19</div>
         <div class="event"><span class="ev-time">20:00</span> 지호 탁구채</div>
@@ -282,7 +243,28 @@
         <div class="event"><span class="ev-time">9:00</span> 한자시험 접수</div>
         <div class="event"><span class="ev-time">10:00</span> 소아정신 예산</div>
         <div class="event"><span class="ev-time">14:00</span> 현지 언니</div>
-        <div class="event"><span class="ev-time">20:00</span> 사무장님</div>
+        <div class="event"><span class="ev-time">20:00</span> 사무장님 문의</div>
+      </div>
+      <div class="day-col">
+        <div class="day-name">화</div>
+        <div class="day-num">21</div>
+      </div>
+      <div class="day-col">
+        <div class="day-name">수</div>
+        <div class="day-num">22</div>
+      </div>
+      <div class="day-col">
+        <div class="day-name">목</div>
+        <div class="day-num">23</div>
+        <div class="event">효림 세금계산서 발행</div>
+      </div>
+      <div class="day-col">
+        <div class="day-name">금</div>
+        <div class="day-num">24</div>
+      </div>
+      <div class="day-col">
+        <div class="day-name">토</div>
+        <div class="day-num">25</div>
       </div>
     </div>
   </div>
@@ -292,19 +274,18 @@
 <div class="tomorrow-section">
   <div class="tomorrow-grid">
     <div class="postit orange">
-      <div class="postit-title">👩‍💻 내일 주인님</div>
-      <div class="tom-item">NH 자동화 마저 — 1.5h</div>
-      <div class="tom-item">커리큘럼 3개 (이하은·크라우드·강남)</div>
-      <div class="tom-item">하이닉스 녹화본 & 질문 — 1h</div>
-      <div class="tom-item">NH 방문 일정 잡기</div>
-      <div class="tom-item">효림 피드백 & 사례소개</div>
-      <div class="tom-item">실습 준비 (멀티탭·계정·LLM)</div>
+      <div class="postit-title">👩‍💻 내일 주인님 (4/20 월)</div>
+      <div class="tom-item">9:00 한자시험 접수 (햄, 지호, 수호)</div>
+      <div class="tom-item">10:00 소아청소년정신상담센터 예산 확인</div>
+      <div class="tom-item">14:00 현지 언니 만나러</div>
+      <div class="tom-item">20:00 사무장님 문의</div>
     </div>
     <div class="postit green">
       <div class="postit-title">🫧 내일 리니</div>
+      <div class="tom-item">아침 브리핑 (크론 에러 수동 fallback)</div>
+      <div class="tom-item">LinkedIn 포스트 워크플로우</div>
       <div class="tom-item">대시보드 업데이트</div>
       <div class="tom-item">진행 상황 트래킹</div>
-      <div class="tom-item">필요시 문서 지원</div>
     </div>
   </div>
 </div>
