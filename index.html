@@ -8,7 +8,11 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    background: #fff;
+    background-color: #fff;
+    background-image:
+      linear-gradient(#e8e8e8 1px, transparent 1px),
+      linear-gradient(90deg, #e8e8e8 1px, transparent 1px);
+    background-size: 24px 24px;
     color: #333;
     padding: 32px;
     min-height: 100vh;
@@ -17,9 +21,11 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 32px;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 3px solid #C0392B;
   }
-  .header h1 { font-size: 1.5rem; font-weight: 700; color: #111; }
+  .header h1 { font-size: 1.5rem; font-weight: 700; color: #C0392B; }
   .header .date { color: #999; font-size: 0.85rem; }
   .header .status {
     margin-left: auto;
@@ -47,20 +53,17 @@
   .column h2 {
     font-size: 1rem;
     font-weight: 700;
-    padding-bottom: 10px;
+    padding-bottom: 8px;
     margin-bottom: 16px;
     border-bottom: 2px solid #C0392B;
     color: #C0392B;
-    display: flex;
-    align-items: center;
-    gap: 8px;
   }
 
   .task-group { margin-bottom: 20px; }
   .task-group h3 {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     color: #aaa;
     margin-bottom: 8px;
   }
@@ -69,20 +72,19 @@
     display: flex;
     align-items: flex-start;
     gap: 8px;
-    padding: 8px 0;
-    font-size: 0.9rem;
-    border-bottom: 1px solid #f0f0f0;
+    padding: 7px 0;
+    font-size: 0.88rem;
+    border-bottom: 1px solid #eee;
   }
   .task:last-child { border-bottom: none; }
   .task .icon { flex-shrink: 0; }
   .task .label { flex: 1; }
-  .task .time { color: #bbb; font-size: 0.75rem; white-space: nowrap; }
+  .task .time { color: #bbb; font-size: 0.73rem; white-space: nowrap; }
   .task.done .label { text-decoration: line-through; color: #ccc; }
-  .task.progress .label { color: #555; }
 
   .progress-bar {
     height: 4px;
-    background: #f0f0f0;
+    background: #eee;
     border-radius: 2px;
     margin-top: 4px;
     overflow: hidden;
@@ -91,13 +93,68 @@
     height: 100%;
     border-radius: 2px;
     background: #C0392B;
-    transition: width .4s;
   }
 
-  .tomorrow-section {
+  /* Weekly schedule */
+  .week-section {
     margin-top: 32px;
     padding-top: 24px;
-    border-top: 1px solid #eee;
+    border-top: 3px solid #C0392B;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .week-section h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #C0392B;
+    margin-bottom: 16px;
+  }
+  .week-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+  }
+  .day-col {
+    background: rgba(255,255,255,0.7);
+    border-radius: 8px;
+    padding: 10px;
+    min-height: 120px;
+  }
+  .day-col.today {
+    border: 2px solid #C0392B;
+  }
+  .day-col .day-header {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .day-col.today .day-header { color: #C0392B; }
+  .day-col .day-date {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .day-col.today .day-date { color: #C0392B; }
+  .day-col .event {
+    font-size: 0.73rem;
+    padding: 3px 0;
+    color: #555;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .day-col .event:last-child { border-bottom: none; }
+  .day-col .event .ev-time {
+    color: #C0392B;
+    font-weight: 600;
+    font-size: 0.68rem;
+  }
+
+  /* Tomorrow */
+  .tomorrow-section {
+    margin-top: 28px;
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
@@ -108,7 +165,7 @@
     color: #C0392B;
     margin-bottom: 12px;
     border-bottom: 2px solid #C0392B;
-    padding-bottom: 10px;
+    padding-bottom: 8px;
   }
   .tomorrow-grid {
     display: grid;
@@ -116,18 +173,17 @@
     gap: 24px;
   }
   .tomorrow-grid h3 {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     color: #aaa;
     margin-bottom: 8px;
   }
   .tomorrow-item {
-    padding: 6px 0;
-    font-size: 0.9rem;
-    border-bottom: 1px solid #f5f5f5;
+    padding: 5px 0;
+    font-size: 0.88rem;
+    border-bottom: 1px solid #eee;
   }
-  .tomorrow-item:last-child { border-bottom: none; }
 
   .slime-footer {
     text-align: center;
@@ -136,7 +192,6 @@
     color: #ccc;
     font-size: 0.8rem;
   }
-  .slime-footer .slime { font-size: 2rem; }
 </style>
 </head>
 <body>
@@ -154,90 +209,91 @@
   <!-- 리니 -->
   <div class="column">
     <h2>🫧 리니</h2>
-
     <div class="task-group">
       <h3>완료</h3>
-      <div class="task done">
-        <span class="icon">✅</span>
-        <span class="label">주인님 할 일 10개 정리 & 타임테이블 작성</span>
-        <span class="time">16:30</span>
-      </div>
-      <div class="task done">
-        <span class="icon">✅</span>
-        <span class="label">타임테이블 수정 (오늘 필수/야간 반영)</span>
-        <span class="time">16:45</span>
-      </div>
-      <div class="task done">
-        <span class="icon">✅</span>
-        <span class="label">일일 메모 작성 (memory/2026-04-18.md)</span>
-        <span class="time">22:44</span>
-      </div>
-      <div class="task done">
-        <span class="icon">✅</span>
-        <span class="label">대시보드 제작 & GitHub 배포</span>
-        <span class="time">23:18</span>
-      </div>
-      <div class="task done">
-        <span class="icon">✅</span>
-        <span class="label">대시보드 v2 리디자인</span>
-        <span class="time">23:21</span>
-      </div>
+      <div class="task done"><span class="icon">✅</span><span class="label">할 일 10개 정리 & 타임테이블</span><span class="time">16:30</span></div>
+      <div class="task done"><span class="icon">✅</span><span class="label">타임테이블 수정</span><span class="time">16:45</span></div>
+      <div class="task done"><span class="icon">✅</span><span class="label">일일 메모 작성</span><span class="time">22:44</span></div>
+      <div class="task done"><span class="icon">✅</span><span class="label">대시보드 v1 제작 & 배포</span><span class="time">23:18</span></div>
+      <div class="task done"><span class="icon">✅</span><span class="label">대시보드 v2 리디자인</span><span class="time">23:21</span></div>
     </div>
-
     <div class="task-group">
-      <h3>진행 중 / 대기</h3>
-      <div class="task progress">
-        <span class="icon">🔄</span>
-        <span class="label">대시보드 실시간 업데이트 대기</span>
-      </div>
-      <div class="progress-bar"><div class="fill" style="width:60%"></div></div>
+      <h3>대기</h3>
+      <div class="task"><span class="icon">🔄</span><span class="label">대시보드 실시간 업데이트</span></div>
     </div>
   </div>
 
   <!-- 주인님 -->
   <div class="column">
     <h2>👩‍💻 주인님</h2>
-
     <div class="task-group">
       <h3>완료</h3>
-      <div class="task done">
-        <span class="icon">✅</span>
-        <span class="label">사업자등록증+통장사본 효림 부장님 발송</span>
-        <span class="time">16:40</span>
-      </div>
+      <div class="task done"><span class="icon">✅</span><span class="label">사업자등록증+통장사본 발송</span><span class="time">16:40</span></div>
     </div>
-
     <div class="task-group">
       <h3>진행 중</h3>
-      <div class="task progress">
-        <span class="icon">🔄</span>
-        <span class="label">효림 스크립트 3시간용 재작성</span>
-      </div>
+      <div class="task"><span class="icon">🔄</span><span class="label">효림 스크립트 3시간용 재작성</span></div>
       <div class="progress-bar"><div class="fill" style="width:50%"></div></div>
     </div>
-
     <div class="task-group">
-      <h3>대기</h3>
-      <div class="task">
-        <span class="icon">⬜</span>
-        <span class="label">효림 실습 보완</span>
-        <span class="time">~1h</span>
-      </div>
-      <div class="task">
-        <span class="icon">⬜</span>
-        <span class="label">효림 PPT 재작성</span>
-        <span class="time">~1h</span>
-      </div>
-      <div class="task">
-        <span class="icon">⬜</span>
-        <span class="label">경기TP 사업계획서 보완 & 발송</span>
-        <span class="time">~2h</span>
-      </div>
-      <div class="task">
-        <span class="icon">🌙</span>
-        <span class="label">NH 자동화</span>
-        <span class="time">~3h</span>
-      </div>
+      <h3>대기 (오늘)</h3>
+      <div class="task"><span class="icon">⬜</span><span class="label">효림 실습 보완</span><span class="time">~1h</span></div>
+      <div class="task"><span class="icon">⬜</span><span class="label">효림 PPT 재작성</span><span class="time">~1h</span></div>
+      <div class="task"><span class="icon">⬜</span><span class="label">경기TP 사업계획서</span><span class="time">~2h</span></div>
+      <div class="task"><span class="icon">🌙</span><span class="label">NH 자동화</span><span class="time">~3h</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- 주간 일정 -->
+<div class="week-section">
+  <h2>📅 이번 주 (4/14 ~ 4/20)</h2>
+  <div class="week-grid">
+    <div class="day-col">
+      <div class="day-header">월</div>
+      <div class="day-date">14</div>
+      <div class="event"><span class="ev-time">09:30</span> SK DIFY 교육</div>
+      <div class="event"><span class="ev-time">10:00</span> 정신과 예약 변경</div>
+      <div class="event"><span class="ev-time">19:00</span> 학년티·오답노트</div>
+      <div class="event"><span class="ev-time">21:00</span> 오픈클로 줌</div>
+    </div>
+    <div class="day-col">
+      <div class="day-header">화</div>
+      <div class="day-date">15</div>
+      <div class="event"><span class="ev-time">09:30</span> SK DIFY 교육</div>
+    </div>
+    <div class="day-col">
+      <div class="day-header">수</div>
+      <div class="day-date">16</div>
+      <div class="event"><span class="ev-time">16:40</span> 지호·햄 정신과</div>
+      <div class="event"><span class="ev-time">17:30</span> 찬 하이닉스 회식</div>
+    </div>
+    <div class="day-col">
+      <div class="day-header">목</div>
+      <div class="day-date">17</div>
+      <div class="event"><span class="ev-time">14:00</span> 경기도민 강의</div>
+      <div class="event"><span class="ev-time">16:00</span> 강기찬 책임님 미팅</div>
+      <div class="event"><span class="ev-time">18:30</span> 수호 축구</div>
+    </div>
+    <div class="day-col today">
+      <div class="day-header">금 → 토</div>
+      <div class="day-date">18</div>
+      <div class="event"><span class="ev-time">10:00</span> 미용실</div>
+      <div class="event">🔥 효림 스크립트 작업 중</div>
+    </div>
+    <div class="day-col">
+      <div class="day-header">일</div>
+      <div class="day-date">19</div>
+      <div class="event"><span class="ev-time">20:00</span> 지호 탁구채</div>
+      <div class="event"><span class="ev-time">21:00</span> 찬 메타 강의</div>
+    </div>
+    <div class="day-col">
+      <div class="day-header">월</div>
+      <div class="day-date">20</div>
+      <div class="event"><span class="ev-time">09:00</span> 한자시험 접수</div>
+      <div class="event"><span class="ev-time">10:00</span> 소아정신상담 예산</div>
+      <div class="event"><span class="ev-time">14:00</span> 현지 언니</div>
+      <div class="event"><span class="ev-time">20:00</span> 사무장님 문의</div>
     </div>
   </div>
 </div>
@@ -248,25 +304,24 @@
   <div class="tomorrow-grid">
     <div>
       <h3>👩‍💻 주인님</h3>
-      <div class="tomorrow-item">NH 자동화 (마저) — 1.5h</div>
+      <div class="tomorrow-item">NH 자동화 마저 — 1.5h</div>
       <div class="tomorrow-item">커리큘럼 3개 (이하은·크라우드·강남)</div>
       <div class="tomorrow-item">하이닉스 녹화본 & 질문정리 — 1h</div>
       <div class="tomorrow-item">NH 방문 일정 잡기</div>
-      <div class="tomorrow-item">효림 자료 피드백 & 사례소개 여쭙기</div>
+      <div class="tomorrow-item">효림 자료 피드백 & 사례소개</div>
       <div class="tomorrow-item">실습 준비 (멀티탭·구글계정·LLM)</div>
     </div>
     <div>
       <h3>🫧 리니</h3>
       <div class="tomorrow-item">대시보드 업데이트</div>
-      <div class="tomorrow-item">주인님 진행 상황 트래킹</div>
+      <div class="tomorrow-item">진행 상황 트래킹</div>
       <div class="tomorrow-item">필요시 문서 지원</div>
     </div>
   </div>
 </div>
 
 <div class="slime-footer">
-  <div class="slime">🫧</div>
-  새벽까지 같이 달리는 중...
+  🫧 새벽까지 같이 달리는 중...
 </div>
 
 </body>
