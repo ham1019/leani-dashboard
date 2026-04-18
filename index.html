@@ -8,241 +8,265 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    background: #0f0f1a;
-    color: #e0e0e0;
-    padding: 24px;
+    background: #fff;
+    color: #333;
+    padding: 32px;
     min-height: 100vh;
   }
   .header {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
   }
-  .header h1 {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #fff;
+  .header h1 { font-size: 1.5rem; font-weight: 700; color: #111; }
+  .header .date { color: #999; font-size: 0.85rem; }
+  .header .status {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: #888;
   }
-  .header .date { color: #888; font-size: 0.9rem; }
-  .grid {
+  .status-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #4ade80;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+  .columns {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    max-width: 900px;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
   }
-  .card {
-    background: #1a1a2e;
-    border-radius: 12px;
-    padding: 20px;
-    border: 1px solid #2a2a3e;
-  }
-  .card.full { grid-column: 1 / -1; }
-  .card h2 {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #888;
-    margin-bottom: 12px;
-  }
-  .status-bar {
+  .column h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    padding-bottom: 10px;
+    margin-bottom: 16px;
+    border-bottom: 2px solid #C0392B;
+    color: #C0392B;
     display: flex;
     align-items: center;
     gap: 8px;
+  }
+
+  .task-group { margin-bottom: 20px; }
+  .task-group h3 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #aaa;
     margin-bottom: 8px;
   }
-  .status-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-  }
-  .status-dot.online { background: #4ade80; }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
-  }
-  .uptime { font-size: 0.8rem; color: #666; }
 
-  /* Activity log */
-  .activity { list-style: none; }
-  .activity li {
-    padding: 8px 0;
-    border-bottom: 1px solid #2a2a3e;
+  .task {
     display: flex;
-    justify-content: space-between;
     align-items: flex-start;
+    gap: 8px;
+    padding: 8px 0;
     font-size: 0.9rem;
+    border-bottom: 1px solid #f0f0f0;
   }
-  .activity li:last-child { border-bottom: none; }
-  .activity .time { color: #666; font-size: 0.8rem; white-space: nowrap; margin-left: 12px; }
-  .activity .emoji { margin-right: 6px; }
+  .task:last-child { border-bottom: none; }
+  .task .icon { flex-shrink: 0; }
+  .task .label { flex: 1; }
+  .task .time { color: #bbb; font-size: 0.75rem; white-space: nowrap; }
+  .task.done .label { text-decoration: line-through; color: #ccc; }
+  .task.progress .label { color: #555; }
 
-  /* Stats */
-  .stats {
-    display: flex;
-    gap: 20px;
-  }
-  .stat {
-    flex: 1;
-    text-align: center;
-    padding: 12px;
-    background: #12121f;
-    border-radius: 8px;
-  }
-  .stat .num {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #fff;
-  }
-  .stat .label {
-    font-size: 0.75rem;
-    color: #888;
+  .progress-bar {
+    height: 4px;
+    background: #f0f0f0;
+    border-radius: 2px;
     margin-top: 4px;
-  }
-
-  /* Progress */
-  .progress-item { margin-bottom: 12px; }
-  .progress-item .top {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.85rem;
-    margin-bottom: 4px;
-  }
-  .progress-item .bar {
-    height: 6px;
-    background: #2a2a3e;
-    border-radius: 3px;
     overflow: hidden;
   }
-  .progress-item .fill {
+  .progress-bar .fill {
     height: 100%;
-    border-radius: 3px;
-    transition: width 0.5s;
+    border-radius: 2px;
+    background: #C0392B;
+    transition: width .4s;
   }
-  .fill.green { background: #4ade80; }
-  .fill.blue { background: #60a5fa; }
-  .fill.orange { background: #fb923c; }
-  .fill.gray { background: #555; }
 
-  .mood {
-    text-align: center;
-    font-size: 1.2rem;
-    padding: 16px;
+  .tomorrow-section {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid #eee;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
   }
-  .mood .slime { font-size: 3rem; }
-  .mood .msg { color: #aaa; font-size: 0.85rem; margin-top: 8px; }
+  .tomorrow-section h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #C0392B;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #C0392B;
+    padding-bottom: 10px;
+  }
+  .tomorrow-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .tomorrow-grid h3 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #aaa;
+    margin-bottom: 8px;
+  }
+  .tomorrow-item {
+    padding: 6px 0;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #f5f5f5;
+  }
+  .tomorrow-item:last-child { border-bottom: none; }
+
+  .slime-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    color: #ccc;
+    font-size: 0.8rem;
+  }
+  .slime-footer .slime { font-size: 2rem; }
 </style>
 </head>
 <body>
 
 <div class="header">
   <h1>🐾 리니의 대시보드</h1>
-  <span class="date">2026-04-18 (토) 22:45 기준</span>
+  <span class="date">2026-04-18 (토)</span>
+  <div class="status">
+    <div class="status-dot"></div>
+    온라인
+  </div>
 </div>
 
-<div class="grid">
-  <!-- 상태 -->
-  <div class="card">
-    <h2>상태</h2>
-    <div class="status-bar">
-      <div class="status-dot online"></div>
-      <span>온라인</span>
-    </div>
-    <div class="uptime">마지막 활동: 22:29</div>
-    <div class="mood">
-      <div class="slime">🫧</div>
-      <div class="msg">주인님이 스크립트 쓰는 동안 대기 중...<br>다들 새벽까지 갈 예정</div>
-    </div>
-  </div>
+<div class="columns">
+  <!-- 리니 -->
+  <div class="column">
+    <h2>🫧 리니</h2>
 
-  <!-- 오늘의 통계 -->
-  <div class="card">
-    <h2>오늘의 통계</h2>
-    <div class="stats">
-      <div class="stat">
-        <div class="num">6</div>
-        <div class="label">대화 턴</div>
-      </div>
-      <div class="stat">
-        <div class="num">1</div>
-        <div class="label">파일 작성</div>
-      </div>
-      <div class="stat">
-        <div class="num">0</div>
-        <div class="label">에러</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 활동 로그 -->
-  <div class="card full">
-    <h2>활동 로그</h2>
-    <ul class="activity">
-      <li>
-        <span><span class="emoji">📋</span>주인님 할 일 10개 정리 & 타임테이블 작성</span>
+    <div class="task-group">
+      <h3>완료</h3>
+      <div class="task done">
+        <span class="icon">✅</span>
+        <span class="label">주인님 할 일 10개 정리 & 타임테이블 작성</span>
         <span class="time">16:30</span>
-      </li>
-      <li>
-        <span><span class="emoji">🔄</span>타임테이블 수정 — 오늘 필수/야간 작업 반영</span>
+      </div>
+      <div class="task done">
+        <span class="icon">✅</span>
+        <span class="label">타임테이블 수정 (오늘 필수/야간 반영)</span>
         <span class="time">16:45</span>
-      </li>
-      <li>
-        <span><span class="emoji">📝</span>memory/2026-04-18.md 일일 메모 작성</span>
+      </div>
+      <div class="task done">
+        <span class="icon">✅</span>
+        <span class="label">일일 메모 작성 (memory/2026-04-18.md)</span>
         <span class="time">22:44</span>
-      </li>
-      <li>
-        <span><span class="emoji">🎨</span>리니 대시보드 제작 중...</span>
-        <span class="time">22:45</span>
-      </li>
-    </ul>
+      </div>
+      <div class="task done">
+        <span class="icon">✅</span>
+        <span class="label">대시보드 제작 & GitHub 배포</span>
+        <span class="time">23:18</span>
+      </div>
+      <div class="task done">
+        <span class="icon">✅</span>
+        <span class="label">대시보드 v2 리디자인</span>
+        <span class="time">23:21</span>
+      </div>
+    </div>
+
+    <div class="task-group">
+      <h3>진행 중 / 대기</h3>
+      <div class="task progress">
+        <span class="icon">🔄</span>
+        <span class="label">대시보드 실시간 업데이트 대기</span>
+      </div>
+      <div class="progress-bar"><div class="fill" style="width:60%"></div></div>
+    </div>
   </div>
 
-  <!-- 주인님 진행 상황 -->
-  <div class="card full">
-    <h2>주인님 진행 상황 (오늘)</h2>
-    <div class="progress-item">
-      <div class="top">
-        <span>사업자등록증+통장사본 발송</span>
-        <span>✅ 완료</span>
+  <!-- 주인님 -->
+  <div class="column">
+    <h2>👩‍💻 주인님</h2>
+
+    <div class="task-group">
+      <h3>완료</h3>
+      <div class="task done">
+        <span class="icon">✅</span>
+        <span class="label">사업자등록증+통장사본 효림 부장님 발송</span>
+        <span class="time">16:40</span>
       </div>
-      <div class="bar"><div class="fill green" style="width:100%"></div></div>
     </div>
-    <div class="progress-item">
-      <div class="top">
-        <span>효림 스크립트 3시간용 재작성</span>
-        <span>🔄 진행 중</span>
+
+    <div class="task-group">
+      <h3>진행 중</h3>
+      <div class="task progress">
+        <span class="icon">🔄</span>
+        <span class="label">효림 스크립트 3시간용 재작성</span>
       </div>
-      <div class="bar"><div class="fill blue" style="width:50%"></div></div>
+      <div class="progress-bar"><div class="fill" style="width:50%"></div></div>
     </div>
-    <div class="progress-item">
-      <div class="top">
-        <span>효림 실습 보완</span>
-        <span>⬜ 대기</span>
+
+    <div class="task-group">
+      <h3>대기</h3>
+      <div class="task">
+        <span class="icon">⬜</span>
+        <span class="label">효림 실습 보완</span>
+        <span class="time">~1h</span>
       </div>
-      <div class="bar"><div class="fill gray" style="width:0%"></div></div>
-    </div>
-    <div class="progress-item">
-      <div class="top">
-        <span>효림 PPT 재작성</span>
-        <span>⬜ 대기</span>
+      <div class="task">
+        <span class="icon">⬜</span>
+        <span class="label">효림 PPT 재작성</span>
+        <span class="time">~1h</span>
       </div>
-      <div class="bar"><div class="fill gray" style="width:0%"></div></div>
-    </div>
-    <div class="progress-item">
-      <div class="top">
-        <span>경기TP 사업계획서</span>
-        <span>🌙 야간 예정</span>
+      <div class="task">
+        <span class="icon">⬜</span>
+        <span class="label">경기TP 사업계획서 보완 & 발송</span>
+        <span class="time">~2h</span>
       </div>
-      <div class="bar"><div class="fill gray" style="width:0%"></div></div>
-    </div>
-    <div class="progress-item">
-      <div class="top">
-        <span>NH 자동화</span>
-        <span>🌙 야간 예정</span>
+      <div class="task">
+        <span class="icon">🌙</span>
+        <span class="label">NH 자동화</span>
+        <span class="time">~3h</span>
       </div>
-      <div class="bar"><div class="fill gray" style="width:0%"></div></div>
     </div>
   </div>
+</div>
+
+<!-- 내일 -->
+<div class="tomorrow-section">
+  <h2>📅 내일 (일, 4/19)</h2>
+  <div class="tomorrow-grid">
+    <div>
+      <h3>👩‍💻 주인님</h3>
+      <div class="tomorrow-item">NH 자동화 (마저) — 1.5h</div>
+      <div class="tomorrow-item">커리큘럼 3개 (이하은·크라우드·강남)</div>
+      <div class="tomorrow-item">하이닉스 녹화본 & 질문정리 — 1h</div>
+      <div class="tomorrow-item">NH 방문 일정 잡기</div>
+      <div class="tomorrow-item">효림 자료 피드백 & 사례소개 여쭙기</div>
+      <div class="tomorrow-item">실습 준비 (멀티탭·구글계정·LLM)</div>
+    </div>
+    <div>
+      <h3>🫧 리니</h3>
+      <div class="tomorrow-item">대시보드 업데이트</div>
+      <div class="tomorrow-item">주인님 진행 상황 트래킹</div>
+      <div class="tomorrow-item">필요시 문서 지원</div>
+    </div>
+  </div>
+</div>
+
+<div class="slime-footer">
+  <div class="slime">🫧</div>
+  새벽까지 같이 달리는 중...
 </div>
 
 </body>
