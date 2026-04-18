@@ -56,17 +56,19 @@
     top: 0; right: 0;
     border-width: 0 20px 20px 0;
     border-style: solid;
-    border-color: #f5f0e8 #f5f0e8 #f0e8c0 #f0e8c0;
+    border-color: #fff #fff #f0e8c0 #f0e8c0;
     box-shadow: -2px 2px 3px rgba(0,0,0,0.05);
   }
   .postit.pink { background: #fce4ec; }
-  .postit.pink::before { border-color: #f5f0e8 #f5f0e8 #f0c0c8 #f0c0c8; }
+  .postit.pink::before { border-color: #fff #fff #f0c0c8 #f0c0c8; }
   .postit.blue { background: #e3f2fd; }
-  .postit.blue::before { border-color: #f5f0e8 #f5f0e8 #c0d0e8 #c0d0e8; }
+  .postit.blue::before { border-color: #fff #fff #c0d0e8 #c0d0e8; }
   .postit.green { background: #e8f5e9; }
-  .postit.green::before { border-color: #f5f0e8 #f5f0e8 #c0dcc0 #c0dcc0; }
+  .postit.green::before { border-color: #fff #fff #c0dcc0 #c0dcc0; }
   .postit.orange { background: #fff3e0; }
-  .postit.orange::before { border-color: #f5f0e8 #f5f0e8 #e8d8c0 #e8d8c0; }
+  .postit.orange::before { border-color: #fff #fff #e8d8c0 #e8d8c0; }
+  .postit.white { background: #fff; }
+  .postit.white::before { border-color: #fff #fff #e0e0e0 #e0e0e0; }
 
   .postit-title {
     font-size: 1.45rem;
@@ -81,7 +83,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
   }
 
@@ -118,12 +120,10 @@
 
   .week-section {
     margin-top: 28px;
-    max-width: 1000px;
+    max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
   }
-  .week-section .postit { background: #fff; }
-  .week-section .postit::before { border-color: #f5f0e8 #f5f0e8 #e0e0e0 #e0e0e0; }
   .week-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -138,7 +138,7 @@
   }
   .day-col.today { border: 2px solid #C0392B; background: #fff8f8; }
   .day-col .day-name {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     color: #999;
     font-weight: 600;
   }
@@ -150,7 +150,7 @@
   }
   .day-col.today .day-num { color: #C0392B; }
   .day-col .event {
-    font-size: 0.97rem;
+    font-size: 0.9rem;
     padding: 2px 0;
     color: #555;
     line-height: 1.5;
@@ -162,7 +162,7 @@
 
   .tomorrow-section {
     margin-top: 24px;
-    max-width: 1000px;
+    max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -189,7 +189,7 @@
 
 <div class="header">
   <h1>🐾 리니의 대시보드</h1>
-  <span class="date">2026-04-19 (일)</span>
+  <span class="date">2026-04-19 (일) 새벽 2:00</span>
   <div class="status">
     <div class="status-dot"></div>
     온라인
@@ -200,42 +200,80 @@
   <!-- 리니 -->
   <div>
     <div class="postit">
-      <div class="postit-title">🫧 리니</div>
-      <div class="task-group-label">완료</div>
-      <div class="task-line done"><span class="icon">✅</span><span class="label">LinkedIn 포스트 후보 3개 전송</span><span class="time">6:00</span></div>
-      <div class="task-line done"><span class="icon">✅</span><span class="label">LinkedIn 리마인드 3회</span><span class="time">1~7시</span></div>
-      <div class="task-line done"><span class="icon">✅</span><span class="label">Nightly routine (다이어리/영상프롬프트/ham점검)</span><span class="time">21:10</span></div>
-      <div class="task-line done"><span class="icon">✅</span><span class="label">대시보드 업데이트</span><span class="time">00:03</span></div>
-      <div class="task-group-label">이슈</div>
-      <div class="task-line"><span class="icon">⚠️</span><span class="label">morning-briefing 크론 2일 연속 에러</span></div>
-      <div class="task-line"><span class="icon">📝</span><span class="label">LinkedIn 포스트 7일째 공백 (4/12~)</span></div>
+      <div class="postit-title">🫧 리니 — 오늘 한 일</div>
+      <div class="task-line done"><span class="icon">✅</span><span class="label">할 일 10개 정리 & 타임테이블</span><span class="time">16:30</span></div>
+      <div class="task-line done"><span class="icon">✅</span><span class="label">GitHub 리포+토큰 설정 & 대시보드 배포</span><span class="time">23:18</span></div>
+      <div class="task-line done"><span class="icon">✅</span><span class="label">대시보드 v2~v5 리디자인</span><span class="time">~23:56</span></div>
+      <div class="task-line done"><span class="icon">✅</span><span class="label">2시간 자동 업데이트 크론 등록</span></div>
+      <div class="task-line done"><span class="icon">✅</span><span class="label">효림 작업방법 인터뷰 1시 예약</span></div>
+      <div class="task-group-label">대기</div>
+      <div class="task-line"><span class="icon">🔄</span><span class="label">대시보드 2시간 자동 업데이트</span></div>
     </div>
   </div>
 
   <!-- 주인님 -->
   <div>
     <div class="postit pink">
-      <div class="postit-title">👩‍💻 주인님</div>
-      <div class="task-group-label">오늘 일정</div>
-      <div class="task-line"><span class="icon">📅</span><span class="label">지호 탁구채</span><span class="time">20:00</span></div>
-      <div class="task-line"><span class="icon">📅</span><span class="label">찬 메타 강의</span><span class="time">21:00</span></div>
-      <div class="task-group-label">대기</div>
-      <div class="task-line"><span class="icon">⬜</span><span class="label">효림 세금계산서 발행 (사업자등록증 수령 후, 23일)</span></div>
-      <div class="task-line"><span class="icon">⬜</span><span class="label">ham 볼트 정리 (루트 파일 정리 필요)</span></div>
+      <div class="postit-title">👩‍💻 주인님 — 오늘 한 일</div>
+      <div class="task-line done"><span class="icon">✅</span><span class="label">사업자등록증+통장사본 발송</span><span class="time">16:40</span></div>
+      <div class="task-line done"><span class="icon">✅</span><span class="label">효림 스크립트 3시간용 재작성</span></div>
+      <div class="task-group-label">진행 중 🔥</div>
+      <div class="task-line"><span class="icon">🔄</span><span class="label">효림 PPT 재작성</span></div>
+      <div class="progress-bar"><div class="fill" style="width:60%"></div></div>
+      <div class="task-group-label">남은 할 일</div>
+      <div class="task-line"><span class="icon">⬜</span><span class="label">효림 실습 보완</span><span class="time">~1h</span></div>
+      <div class="task-line"><span class="icon">⬜</span><span class="label">경기TP 사업계획서 보완 & 발송</span><span class="time">~2h</span></div>
+      <div class="task-line"><span class="icon">⬜</span><span class="label">NH 자동화</span><span class="time">~3h</span></div>
+      <div class="task-line"><span class="icon">⬜</span><span class="label">커리큘럼 3개 (이하은·크라우드·강남)</span></div>
+      <div class="task-line"><span class="icon">⬜</span><span class="label">하이닉스 녹화본 & 질문정리</span></div>
+      <div class="task-line"><span class="icon">⬜</span><span class="label">NH 방문 일정 잡기</span></div>
     </div>
   </div>
 </div>
 
-<!-- 주간 일정 -->
+<!-- 이번 주 -->
 <div class="week-section">
-  <div class="postit">
-    <div class="postit-title">📅 이번 주 (4/19 ~ 4/25)</div>
+  <div class="postit white">
+    <div class="postit-title">📅 이번 주 (4/14 ~ 4/20)</div>
     <div class="week-grid">
+      <div class="day-col">
+        <div class="day-name">월</div>
+        <div class="day-num">14</div>
+        <div class="event"><span class="ev-time">9:30</span> SK DIFY 교육</div>
+        <div class="event"><span class="ev-time">10:00</span> 정신과 예약 변경</div>
+        <div class="event"><span class="ev-time">19:00</span> 학년티·오답노트</div>
+        <div class="event"><span class="ev-time">21:00</span> 오픈클로 줌</div>
+      </div>
+      <div class="day-col">
+        <div class="day-name">화</div>
+        <div class="day-num">15</div>
+        <div class="event"><span class="ev-time">9:30</span> SK DIFY 교육</div>
+      </div>
+      <div class="day-col">
+        <div class="day-name">수</div>
+        <div class="day-num">16</div>
+        <div class="event"><span class="ev-time">16:40</span> 지호·햄 정신과</div>
+        <div class="event"><span class="ev-time">17:30</span> 찬 하이닉스 회식</div>
+      </div>
+      <div class="day-col">
+        <div class="day-name">목</div>
+        <div class="day-num">17</div>
+        <div class="event"><span class="ev-time">14:00</span> 경기도민 강의</div>
+        <div class="event"><span class="ev-time">16:00</span> 강기찬 책임님 미팅</div>
+        <div class="event"><span class="ev-time">18:30</span> 수호 축구</div>
+      </div>
+      <div class="day-col">
+        <div class="day-name">금</div>
+        <div class="day-num">18</div>
+        <div class="event"><span class="ev-time">10:00</span> 미용실</div>
+        <div class="event">🔥 효림 작업의 밤</div>
+      </div>
       <div class="day-col today">
-        <div class="day-name">일</div>
+        <div class="day-name">토→일</div>
         <div class="day-num">19</div>
         <div class="event"><span class="ev-time">20:00</span> 지호 탁구채</div>
         <div class="event"><span class="ev-time">21:00</span> 찬 메타 강의</div>
+        <div class="event">🔥 새벽 작업 중</div>
       </div>
       <div class="day-col">
         <div class="day-name">월</div>
@@ -245,26 +283,56 @@
         <div class="event"><span class="ev-time">14:00</span> 현지 언니</div>
         <div class="event"><span class="ev-time">20:00</span> 사무장님 문의</div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- 다음 주 -->
+<div class="week-section">
+  <div class="postit white">
+    <div class="postit-title">📅 다음 주 (4/21 ~ 4/27)</div>
+    <div class="week-grid">
+      <div class="day-col">
+        <div class="day-name">월</div>
+        <div class="day-num">21</div>
+        <div class="event">SK하이닉스 AI교육 참관</div>
+        <div class="event"><span class="ev-time">19:30</span> 오픈클로 밋업 결정</div>
+        <div class="event"><span class="ev-time">월세이체</span></div>
+      </div>
       <div class="day-col">
         <div class="day-name">화</div>
-        <div class="day-num">21</div>
+        <div class="day-num">22</div>
+        <div class="event"><span class="ev-time">8:00</span> 월세이체</div>
       </div>
       <div class="day-col">
         <div class="day-name">수</div>
-        <div class="day-num">22</div>
+        <div class="day-num">23</div>
+        <div class="event"><span class="ev-time">15:00</span> 🔴 효림 창립기념일 행사</div>
       </div>
       <div class="day-col">
         <div class="day-name">목</div>
-        <div class="day-num">23</div>
-        <div class="event">효림 세금계산서 발행</div>
+        <div class="day-num">24</div>
+        <div class="event"><span class="ev-time">10:00</span> 크라우드 아카데미 6시간 교육</div>
+        <div class="event"><span class="ev-time">11:00</span> 책의 얼굴</div>
+        <div class="event"><span class="ev-time">18:30</span> 수호 축구</div>
       </div>
       <div class="day-col">
         <div class="day-name">금</div>
-        <div class="day-num">24</div>
+        <div class="day-num">25</div>
+        <div class="event"><span class="ev-time">9:00</span> 찬 화장실 청소</div>
+        <div class="event"><span class="ev-time">10:00</span> 그린팀</div>
+        <div class="event"><span class="ev-time">14:00</span> 메타 오프모임</div>
       </div>
       <div class="day-col">
         <div class="day-name">토</div>
-        <div class="day-num">25</div>
+        <div class="day-num">26</div>
+        <div class="event">💍 결혼기념일</div>
+      </div>
+      <div class="day-col">
+        <div class="day-name">일</div>
+        <div class="day-num">27</div>
+        <div class="event">예창패 교육</div>
+        <div class="event">지호 연주회 (시간미정)</div>
       </div>
     </div>
   </div>
@@ -274,24 +342,24 @@
 <div class="tomorrow-section">
   <div class="tomorrow-grid">
     <div class="postit orange">
-      <div class="postit-title">👩‍💻 내일 주인님 (4/20 월)</div>
+      <div class="postit-title">👩‍💻 내일 (4/20 월)</div>
       <div class="tom-item">9:00 한자시험 접수 (햄, 지호, 수호)</div>
-      <div class="tom-item">10:00 소아청소년정신상담센터 예산 확인</div>
+      <div class="tom-item">10:00 소아정신상담센터 예산</div>
       <div class="tom-item">14:00 현지 언니 만나러</div>
       <div class="tom-item">20:00 사무장님 문의</div>
     </div>
     <div class="postit green">
-      <div class="postit-title">🫧 내일 리니</div>
-      <div class="tom-item">아침 브리핑 (크론 에러 수동 fallback)</div>
-      <div class="tom-item">LinkedIn 포스트 워크플로우</div>
-      <div class="tom-item">대시보드 업데이트</div>
-      <div class="tom-item">진행 상황 트래킹</div>
+      <div class="postit-title">🫧 다음 주 중요</div>
+      <div class="tom-item">🔴 4/23 수 — 효림 창립기념일 강의 (D-4)</div>
+      <div class="tom-item">4/24 목 — 크라우드 아카데미 6시간 교육</div>
+      <div class="tom-item">4/26 토 — 💍 결혼기념일</div>
+      <div class="tom-item">4/27 일 — 예창패 교육 + 지호 연주회</div>
     </div>
   </div>
 </div>
 
 <div class="slime-footer">
-  🫧 새벽까지 같이 달리는 중...
+  🫧 새벽 2시 — 아직 안 잤어...
 </div>
 
 </body>
