@@ -91,6 +91,7 @@
   .task-line .label { flex: 1; }
   .task-line .time { color: #aaa; font-size: 1.05rem; }
   .task-line.done .label { text-decoration: line-through; color: #bbb; }
+  .task-line.urgent .label { color: #C0392B; font-weight: 700; }
   .task-group-label {
     color: #999;
     font-size: 1.05rem;
@@ -140,6 +141,7 @@
     color: #C0392B;
     font-weight: 600;
   }
+  .day-col .event.done-event { color: #aaa; text-decoration: line-through; }
   .tomorrow-section {
     margin-top: 24px;
     max-width: 1000px;
@@ -168,7 +170,7 @@
 
 <div class="header">
   <h1>🐾 리니의 대시보드</h1>
-  <span class="date">2026-04-19 (일) 22:03</span>
+  <span class="date">2026-04-19 (일) 22:33</span>
   <div class="status">
     <div class="status-dot"></div>
     온라인
@@ -176,28 +178,48 @@
 </div>
 
 <div class="columns">
+  <!-- 이번주 완료 -->
   <div>
-    <div class="postit">
-      <div class="postit-title">🫧 리니</div>
-      <div class="task-group-label">완료</div>
-      <div class="task-line done"><span class="icon">✅</span><span class="label">대시보드 업데이트</span><span class="time">04:03</span></div>
-      <div class="task-group-label">이슈</div>
-      <div class="task-line"><span class="icon">📝</span><span class="label">LinkedIn 포스트 공백</span></div>
+    <div class="postit green">
+      <div class="postit-title">✅ 이번주 완료</div>
+      <div class="task-line done"><span class="icon">✅</span><span class="label">NH 영업1팀 요구사항 청취 (4/13)</span></div>
+      <div class="task-line done"><span class="icon">✅</span><span class="label">NH 웹디자인팀 Dify 교육 (4/13)</span></div>
+      <div class="task-line done"><span class="icon">✅</span><span class="label">SK계열사 Dify 교육 운영 (4/14)</span></div>
+      <div class="task-line done"><span class="icon">✅</span><span class="label">강기찬 책임님 컨소시엄 상담 (4/14)</span></div>
+      <div class="task-line done"><span class="icon">✅</span><span class="label">AGENTS.md·SOUL.md 컨텍스트 축소 (4/14)</span></div>
+      <div class="task-line done"><span class="icon">✅</span><span class="label">MEMORY.md 구조 정리 (4/14)</span></div>
+      <div class="task-line done"><span class="icon">✅</span><span class="label">아침 브리핑 크론 수정 (4/15)</span></div>
+      <div class="task-line done"><span class="icon">✅</span><span class="label">세무사 현지 언니 만남 (4/16)</span></div>
+      <div class="task-line done"><span class="icon">✅</span><span class="label">경기도민 강의 (4/17)</span></div>
+      <div class="task-line done"><span class="icon">✅</span><span class="label">효림 사업자등록증+통장사본 발송 (4/18)</span></div>
+      <div class="task-line done"><span class="icon">✅</span><span class="label">효림 스크립트 재작성 3h (4/18)</span></div>
+      <div class="task-line done"><span class="icon">✅</span><span class="label">효림 PPT 완성 (4/19)</span></div>
+      <div class="task-line done"><span class="icon">✅</span><span class="label">신호준 사장님 메일 답장 (4/19)</span></div>
     </div>
   </div>
+
+  <!-- 남은 TODO -->
   <div>
     <div class="postit pink">
-      <div class="postit-title">👩‍💻 주인님</div>
-      <div class="task-group-label">오늘 일정</div>
-      <div class="task-line"><span class="icon">📅</span><span class="label">오후8시 지호 탁구채</span><span class="time">20:00</span></div>
-      <div class="task-line"><span class="icon">📅</span><span class="label">찬 메타 강의</span><span class="time">21:00</span></div>
-      <div class="task-group-label">대기</div>
-      <div class="task-line"><span class="icon">⬜</span><span class="label">효림 세금계산서 발행 (23일)</span></div>
+      <div class="postit-title">🔥 남은 TODO</div>
+      <div class="task-group-label">🔴 오늘 밤</div>
+      <div class="task-line urgent"><span class="icon">🔴</span><span class="label">경기TP 사업계획서 (내일 마감!)</span></div>
+      <div class="task-line urgent"><span class="icon">🔴</span><span class="label">NH 영업1팀 솔루션 만들기</span></div>
+      <div class="task-line"><span class="icon">🟡</span><span class="label">이하은씨 커리큘럼 작성&발송</span></div>
+      <div class="task-group-label">🟠 이번주</div>
+      <div class="task-line"><span class="icon">⬜</span><span class="label">효림 동영상 녹화 + 리허설</span></div>
+      <div class="task-line"><span class="icon">⬜</span><span class="label">SK하이닉스 스크립트 암기+영상</span></div>
+      <div class="task-line"><span class="icon">⬜</span><span class="label">크라우드아카데미 커리큘럼 독촉 (4/24)</span></div>
+      <div class="task-group-label">🟡 다음주+</div>
+      <div class="task-line"><span class="icon">⬜</span><span class="label">효림 세금계산서 발행 (4/23)</span></div>
+      <div class="task-line"><span class="icon">⬜</span><span class="label">효림 강의 (4/28 창립기념일)</span></div>
+      <div class="task-line"><span class="icon">⬜</span><span class="label">NH 방문 일정 잡기</span></div>
+      <div class="task-line"><span class="icon">⬜</span><span class="label">강남 커리큘럼</span></div>
     </div>
   </div>
 </div>
 
-<!-- 이번 주 -->
+<!-- 이번 주 캘린더 -->
 <div class="week-section">
   <div class="postit">
     <div class="postit-title">📅 이번 주 (4/19 ~ 4/25)</div>
@@ -207,6 +229,8 @@
         <div class="day-num">19</div>
         <div class="event"><span class="ev-time">20:00</span> 지호 탁구채</div>
         <div class="event"><span class="ev-time">21:00</span> 찬 메타 강의</div>
+        <div class="event" style="color:#C0392B">🔥 경기TP 마감(내일)</div>
+        <div class="event" style="color:#C0392B">🔥 NH 솔루션</div>
       </div>
       <div class="day-col">
         <div class="day-name">월</div>
@@ -232,6 +256,7 @@
         <div class="day-name">목</div>
         <div class="day-num">23</div>
         <div class="event"><span class="ev-time">15:00</span> 효림 창립기념일 행사</div>
+        <div class="event">🧾 효림 세금계산서 발행</div>
       </div>
       <div class="day-col">
         <div class="day-name">금</div>
@@ -271,6 +296,7 @@
         <div class="day-name">월</div>
         <div class="day-num">28</div>
         <div class="event"><span class="ev-time">07:00</span> 지호 녹색어머니회</div>
+        <div class="event" style="color:#C0392B">🎓 효림 강의 (창립기념일)</div>
       </div>
       <div class="day-col">
         <div class="day-name">화</div>
@@ -299,7 +325,7 @@
   </div>
 </div>
 
-<!-- 내일 -->
+<!-- 내일 준비 -->
 <div class="tomorrow-section">
   <div class="tomorrow-grid">
     <div class="postit orange">
@@ -308,18 +334,21 @@
       <div class="tom-item">10:00 소아청소년정신상담센터 예산 확인</div>
       <div class="tom-item">14:00 현지 언니 만나러</div>
       <div class="tom-item">20:00 사무장님 문의</div>
+      <div class="tom-item" style="color:#C0392B">⚠️ 경기TP 사업계획서 마감!</div>
     </div>
-    <div class="postit green">
-      <div class="postit-title">🫧 내일 리니</div>
-      <div class="tom-item">아침 브리핑</div>
-      <div class="tom-item">LinkedIn 포스트 워크플로우</div>
-      <div class="tom-item">대시보드 업데이트</div>
+    <div class="postit blue">
+      <div class="postit-title">⚡ 준비 필요 (미리 해두기)</div>
+      <div class="tom-item">🔴 경기TP 사업계획서 — 오늘 밤 완성</div>
+      <div class="tom-item">🔴 NH 영업1팀 솔루션 — 오늘 밤</div>
+      <div class="tom-item">🟡 이하은씨 커리큘럼 — 오늘 밤</div>
+      <div class="tom-item">⬜ 크라우드아카데미 커리큘럼 독촉 (4/24 전)</div>
+      <div class="tom-item">⬜ 효림 동영상 녹화 (리허설 전)</div>
     </div>
   </div>
 </div>
 
 <div class="slime-footer">
-  🫧 좋은 아침이에요, 슬라임은 이미 일하고 있어요
+  🫧 밤샘 작업 모드 활성화… 슬라임도 같이 깨 있어요
 </div>
 
 </body>
