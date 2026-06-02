@@ -32,7 +32,7 @@
   .task-line .time { color: #aaa; font-size: 1.05rem; }
   .task-line.done .label { text-decoration: line-through; color: #bbb; }
   .task-group-label { color: #999; font-size: 1.05rem; margin: 8px 0 4px; text-decoration: underline wavy #ccc; }
-  .week-section { margin-top: 28px; max-width: 1000px; margin-left: auto; margin-right: auto; }
+  .week-section { margin-top: 28px; max-width: 1100px; margin-left: auto; margin-right: auto; }
   .week-section .postit { background: #fff; }
   .week-section .postit::before { border-color: #f5f0e8 #f5f0e8 #e0e0e0 #e0e0e0; }
   .week-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-top: 10px; }
@@ -53,7 +53,7 @@
 
 <div class="header">
   <h1>🐾 리니의 대시보드</h1>
-  <span class="date">2026-06-03 (수) 02:03</span>
+  <span class="date">2026-06-03 (수) 04:03</span>
   <div class="status"><div class="status-dot"></div> 온라인</div>
 </div>
 
@@ -64,7 +64,7 @@
       <div class="task-group-label">오늘(6/3) 할 일</div>
       <div class="task-line"><span class="icon">⬜</span><span class="label">06:00 LinkedIn 포스트 워크플로우</span></div>
       <div class="task-line"><span class="icon">⬜</span><span class="label">06:30 아침 브리핑</span></div>
-      <div class="task-line"><span class="icon">⬜</span><span class="label">대시보드 업데이트 (2시간 간격)</span></div>
+      <div class="task-line"><span class="icon">✅</span><span class="label">대시보드 업데이트 (04:03)</span></div>
       <div class="task-line"><span class="icon">⬜</span><span class="label">야간 루틴</span></div>
     </div>
   </div>
@@ -72,9 +72,9 @@
     <div class="postit pink">
       <div class="postit-title">👩💻 주인님</div>
       <div class="task-group-label">오늘 일정 (6/3 수)</div>
+      <div class="task-line"><span class="icon">📌</span><span class="label" style="color:#aaa;">SK하이닉스 교육 2일차 (종일)</span></div>
       <div class="task-line"><span class="icon">💅</span><span class="label">08:50 네일</span></div>
       <div class="task-line"><span class="icon">💳</span><span class="label">12:30 지호 마리이야기 환불요청</span></div>
-      <div class="task-line"><span class="icon" style="color:#aaa;">📌</span><span class="label" style="color:#aaa;">SK하이닉스 교육 2일차 (종일)</span></div>
     </div>
   </div>
 </div>
@@ -82,26 +82,35 @@
 <!-- 이번 주 -->
 <div class="week-section">
   <div class="postit">
-    <div class="postit-title">📅 이번 주 (6/2 ~ 6/8)</div>
+    <div class="postit-title">📅 이번 주 (6/1 ~ 6/7)</div>
     <div class="week-grid">
       <div class="day-col">
         <div class="day-name">월</div>
+        <div class="day-num">1</div>
+        <div class="event"><span class="ev-time">종일</span> 🧾 NH 세금계산서 발행</div>
+        <div class="event"><span class="ev-time">10:00</span> NH 대표님 전화 약속</div>
+        <div class="event"><span class="ev-time">16:00</span> 상상매니저 미팅</div>
+        <div class="event"><span class="ev-time">18:00</span> 소금 구매</div>
+      </div>
+      <div class="day-col">
+        <div class="day-name">화</div>
         <div class="day-num">2</div>
-        <div class="event"><span class="ev-time">종일</span> [청주] SK하이닉스AI교육(주) ⭐</div>
+        <div class="event"><span class="ev-time">종일</span> [청주] SK하이닉스AI교육 ⭐</div>
         <div class="event"><span class="ev-time">07:00</span> 성남지역상품권 구매</div>
         <div class="event"><span class="ev-time">11:30</span> 혜리 전시회 확인</div>
         <div class="event"><span class="ev-time">20:00</span> 빅셀 미팅 리드</div>
       </div>
       <div class="day-col today">
-        <div class="day-name">화</div>
+        <div class="day-name">수</div>
         <div class="day-num">3</div>
+        <div class="event"><span class="ev-time">종일</span> SK하이닉스 2일차 ⭐</div>
         <div class="event"><span class="ev-time">08:50</span> 네일</div>
         <div class="event"><span class="ev-time">12:30</span> 지호 마리이야기 환불요청</div>
       </div>
       <div class="day-col">
         <div class="day-name">목</div>
         <div class="day-num">4</div>
-        <div class="event"><span class="ev-time">종일</span> SK하이닉스AI교육(주) ⭐</div>
+        <div class="event"><span class="ev-time">종일</span> SK하이닉스AI교육 ⭐</div>
         <div class="event"><span class="ev-time">10:00</span> 지호 기자단 파일 업로드 수정</div>
         <div class="event"><span class="ev-time">21:00</span> 지피터스 스터디</div>
       </div>
@@ -132,7 +141,7 @@
 <!-- 다음 주 -->
 <div class="week-section">
   <div class="postit">
-    <div class="postit-title">📅 다음 주 (6/9 ~ 6/15)</div>
+    <div class="postit-title">📅 다음 주 (6/8 ~ 6/14)</div>
     <div class="week-grid">
       <div class="day-col">
         <div class="day-name">월</div>
@@ -163,7 +172,7 @@
         <div class="day-name">금</div>
         <div class="day-num">12</div>
         <div class="event"><span class="ev-time">08:00</span> 지호 rep신청(마리이야기)</div>
-        <div class="event"><span class="ev-time">18:00</span> 지호·수호 검·실내화 가져오기</div>
+        <div class="event"><span class="ev-time">18:00</span> 지호·수호 검·실내화</div>
         <div class="event"><span class="ev-time">18:30</span> 수호 축구</div>
       </div>
       <div class="day-col">
@@ -204,7 +213,7 @@
 </div>
 
 <div class="slime-footer">
-  수요일! 오늘은 네일 & 환불요청 처리하는 날 🐾
+  수요일 새벽! SK하이닉스 2일차 + 네일 + 환불요청 🐾
 </div>
 
 </body>
